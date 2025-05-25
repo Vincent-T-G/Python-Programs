@@ -1,0 +1,29 @@
+# Problem statement: Write a program to guess a number between 1 and 10
+
+import random
+
+number = random.randint(1,10)
+
+wrong = True
+
+tries = 0
+
+while wrong:
+    try:
+        guess = int(input("Enter a number between one and ten: "))
+
+        if 0 < guess and guess < 11:
+            tries += 1
+            if guess == number:
+                print()
+                print(f"Congratulations! {number} is the number we were looking for.")
+                print(f"It took you {tries} tries")
+                wrong = False
+            else:
+                print()
+                print(f"{guess} is not the number")
+        else:
+            print("The number must be a number between 1 and 10!")
+    except ValueError:
+        print("Invalid input!")
+    
